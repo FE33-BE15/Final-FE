@@ -1,0 +1,54 @@
+@media screen and (min-width:400px) {
+    .Footer{
+        color: white;
+        display: flex;
+        background-color: #048853;
+        padding: 15px 10px;
+        align-items: flex-start;
+    }
+    .Footer div{
+        width: 400px;
+        margin: 0 4px;
+    }
+    .Footer h3{
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+    .Footer p{
+        margin: 10px 0;
+    }
+    .LogoFooter{
+        width: 250px;
+    }
+    .LogoPartner{
+        width: 120px;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .Footer{
+        color: white;
+        background-color: #048853;
+        padding: 15px 10px;
+        display: block;
+    }
+    .Footer h3{
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+    .Footer p{
+        margin: 10px 0;
+    }
+    .LogoFooter{
+        width: 250px;
+    }
+    .LogoPartner{
+        margin: 0 10px;
+        width: 100px;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+}
