@@ -1,0 +1,39 @@
+@media screen and (min-width:400px) {
+    .ContainerDetail{
+        margin: 30px 100px;
+    }
+    .ContainerDetail h1{
+        margin-bottom: 0;
+    }
+    .ContainerDetail .ArtikelDate{
+        color: grey;
+        margin-top: 0
+        ;
+    }
+    .ContainerDetail .ImgDetailArtikel{
+        max-width: 600px;
+        width: 100%;
+        max-height: 400px;
+        height: 50%;
+    }
+}
+@media screen and (max-width:400px) {
+    .ContainerDetail{
+        margin: 0 0 ;
+    }
+    .ContainerDetail h1{
+        margin-bottom: 0;
+        font-size: 24px;
+    }
+    .ContainerDetail .ArtikelDate{
+        color: grey;
+        margin-top: 0;
+        font-size: 14px;
+    }
+    .ContainerDetail .ImgDetailArtikel{
+        max-width: 600px;
+        width: 100%;
+        max-height: 400px;
+        height: 50%;
+    }
+}
