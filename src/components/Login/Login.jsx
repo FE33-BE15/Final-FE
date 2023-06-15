@@ -2,6 +2,8 @@ import { useState } from 'react';
 import bg from '../Login/BG.png'
 import { Link } from 'react-router-dom';
 import '../Login/Login.css'
+import { useDispatch } from 'react-redux';
+import { signInUser } from '../../redux/authSlice';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -15,12 +17,15 @@ function Login() {
         setPass(e.target.value);
     }
 
-    const login = (e) => {
-        e.preventDefault();
-
-        console.log('Masukan Email :', email)
-        console.log('Masukan Password :', pass)
-    };
+    const dispatch = useDispatch();
+    const klikMasuk = () => {
+        const data = {
+            Email : email,
+            Password : pass
+        }
+        console.log(data);
+        dispatch(signInUser({data}));
+    }
 
     return (
         <div className="container-1">
@@ -29,7 +34,7 @@ function Login() {
             </div>
 
             <div className="login-content">
-                <form action='#' onSubmit={login}>
+                <form action='#'>
                     <div className="title-container">
                         <h2>Masuk</h2>
                         <p>Selamat Datang Di Baries</p>
@@ -70,7 +75,7 @@ function Login() {
                         <a href='#'>Lupa Password ?</a>
                     </div>
 
-                    <input type='submit' className='btn' value='Login' />
+                    <input type='submit' className='btn' value='Login' onClick={klikMasuk}/>
 
                     <h4>Belum Punya Akun ? <Link to='/Register'>Daftar</Link></h4>
                 </form>

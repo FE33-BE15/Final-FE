@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Register/Register.css'
+import { useDispatch } from 'react-redux';
+import { signUpUser } from '../../redux/authSlice';
+
 
 function Register() {
     const [name, setName] = useState('');
@@ -44,6 +47,7 @@ function Register() {
         setActivity(e.target.value)
     };
 
+    const dispatch = useDispatch()
     const klikDaftar = () => {
         const data = {
             Username : name,
@@ -56,6 +60,7 @@ function Register() {
             CPassword : cpass
         }
         console.log(data);
+        dispatch(signUpUser({data}));
     };
 
     return (
