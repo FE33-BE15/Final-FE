@@ -10,25 +10,36 @@ const initialState = {
 }
 
 export const signUpUser = createAsyncThunk('signupuser', async(body)=>{
-    const res = await fetch("Link API", {
+    console.log(body.password);
+    const res = await fetch("https://api-baries.cyclic.app/users/register", {
         method: "POST",
         headers:{
             'content-type': 'application/json',
 
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify({
+            name : body.name,
+            email : body.email,
+            age:body.age,
+            weight:body.weight,
+            height:body.height,
+            activity:body.activity,
+            password:body.pass,
+            gender:body.gender
+        })
     })
     return await res.json();
 });
 
 export const signInUser = createAsyncThunk('signinuser', async(body)=>{
-    const res = await fetch("Link API", {
+    console.log(body.password);
+    const res = await fetch("http://localhost:3000/users/login", {
         method: "POST",
         headers:{
             'content-type': 'application/json',
 
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify({email : body.email, password : body.pass})
     })
     return await res.json();
 });
@@ -37,20 +48,20 @@ const authSlice = createSlice({
     name: 'user',
     initialState,
     reducers:{
-        addToken: (state, action) => {
+        addToken: (state) => {
             state.token = localStorage.getItem('token');
         },
-        addUser: (state, action) => {
+        addUser: (state) => {
             state.token = localStorage.getItem('user');
         },
-        logout: (state, action) => {
+        logout: (state) => {
             state.token = null;
             localStorage.clear();
         }
     },
     extraReducers: {
         //Login
-        [signInUser.pending]: (state,action)=>{
+        [signInUser.pending]: (state)=>{
             state.loading = true
         },
         [signInUser.fulfilled]: (state,{payload:{error,msg,token,user}})=>{
@@ -68,11 +79,11 @@ const authSlice = createSlice({
             }
 
         },
-        [signUpUser.rejected]: (state,action)=>{
+        [signUpUser.rejected]: (state)=>{
             state.loading = true
         },
         //Register
-        [signUpUser.pending]: (state,action)=>{
+        [signUpUser.pending]: (state)=>{
             state.loading = true
         },
         [signUpUser.fulfilled]: (state,{payload:{error,msg}})=>{
@@ -83,7 +94,7 @@ const authSlice = createSlice({
                 state.msg = msg
             }
         },
-        [signUpUser.rejected]: (state,action)=>{
+        [signUpUser.rejected]: (state)=>{
             state.loading = true
         }
     }

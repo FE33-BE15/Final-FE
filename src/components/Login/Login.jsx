@@ -5,7 +5,7 @@ import '../Login/Login.css'
 import { useDispatch } from 'react-redux';
 import { signInUser } from '../../redux/authSlice';
 
-function Login() {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
@@ -19,12 +19,8 @@ function Login() {
 
     const dispatch = useDispatch();
     const klikMasuk = () => {
-        const data = {
-            Email : email,
-            Password : pass
-        }
-        console.log(data);
-        dispatch(signInUser({data}));
+        console.log(email,pass);
+        dispatch(signInUser({email,pass}));
     }
 
     return (

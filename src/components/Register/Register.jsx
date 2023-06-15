@@ -11,9 +11,14 @@ function Register() {
     const [email, setEmail] = useState('');
     const [height, setHeight] = useState('');
     const [pass, setPass] = useState('');
-    const [cpass, setCpass] = useState('');
     const [age, setAge] = useState('');
     const [activity, setActivity] = useState('');
+    const [gender, setGender] = useState('');
+
+    const inputgender = (e) => {
+        setGender(e.target.value);
+        console.log(gender);
+    }
 
     const inputName = (e) => {
         setName(e.target.value);
@@ -31,12 +36,8 @@ function Register() {
         setHeight(e.target.value);
     };
 
-    const inputPass = (e) => {
+    const inputPassword = (e) => {
         setPass(e.target.value)
-    };
-
-    const inputCpass = (e) => {
-        setCpass(e.target.value)
     };
 
     const inputAge = (e) => {
@@ -49,18 +50,17 @@ function Register() {
 
     const dispatch = useDispatch()
     const klikDaftar = () => {
-        const data = {
-            Username : name,
-            Email : email,
-            Umur : age,
-            Berat : weight,
-            Tinggi : height,
-            Aktivitas : activity,
-            Password : pass,
-            CPassword : cpass
-        }
-        console.log(data);
-        dispatch(signUpUser({data}));
+        console.log(
+            name,
+            email,
+            age,
+            weight,
+            height,
+            activity,
+            pass,
+            gender
+        );
+        dispatch(signUpUser({name, email, age, weight, height, activity, pass, gender}));
     };
 
     return (
@@ -140,33 +140,22 @@ function Register() {
                             <span className="details">Password</span>
                             <input
                                 value={pass}
-                                onChange={inputPass} 
+                                onChange={inputPassword} 
                                 type="password" 
                                 placeholder='Masukan Password' 
                                 required
                             />
                         </div>
 
-                        <div className="input-box">
-                            <span className="details">Confirm Password</span>
-                            <input 
-                                value={cpass}
-                                onChange={inputCpass}
-                                type="password" 
-                                placeholder='Konfirmasi Password' 
-                                required
-                            />
-                        </div>
-
                     </div>
-                    <div className="gender-details">
-                        <input type='radio' name='gender' id='dot-1'></input>
-                        <input type='radio' name='gender' id='dot-2'></input>
-                        <input type='radio' name='gender' id='dot-3'></input>
+                    <div className="gender-details" onChange={inputgender}>
+                        <input type='radio' name='gender' id='dot-1' value="1"></input>
+                        <input type='radio' name='gender' id='dot-2' value="2"></input>
+                        <input type='radio' name='gender' id='dot-3' value="3"></input>
                         <span className="gender-title">Jenis Kelamin</span>
                         <div className="category">
                             <label htmlFor='dot-1'>
-                                <span className="dot one"></span>
+                                <span  className="dot one"></span>
                                 <span className="gender">Laki-laki</span>
                             </label>
                             <label htmlFor='dot-2'>
