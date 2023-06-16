@@ -11,15 +11,16 @@ export const getTrack = createAsyncThunk('track/getTrack',() => {
     const token = localStorage.getItem("token")
     const user = JSON.parse(localStorage.user)
     const userId = user.id
+    console.log(token)
     return axios
-    .get(`http://localhost:3000/trackings/${userId}`,{headers :{token : token}})
+    .get(`https://api-baries.cyclic.app/trackings/${userId}`,{headers :{token : token}})
     .then((respone)=> respone.data)
 })
 export const deleteTrack = createAsyncThunk('track/deleteTrack',(payload) => {
     const token = localStorage.getItem("token")
     console.log(payload)
     return axios
-    .delete(`http://localhost:3000/trackings/${payload}`,{headers :{token : token}})
+    .delete(`https://api-baries.cyclic.app/trackings/${payload}`,{headers :{token : token}})
     .then((respone)=> console.log(respone))
 })
 

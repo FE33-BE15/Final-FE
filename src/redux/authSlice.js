@@ -12,7 +12,7 @@ const initialState = {
 
 export const signUpUser = createAsyncThunk('signupuser', async(body)=>{
     console.log(body)
-    const res = await fetch("http://localhost:3000/users/register", {
+    const res = await fetch("https://api-baries.cyclic.app/users/register", {
         method: "POST",
         headers:{
             'content-type': 'application/json',
@@ -26,7 +26,7 @@ export const signUpUser = createAsyncThunk('signupuser', async(body)=>{
 
 export const signInUser = createAsyncThunk('signinuser', async(body)=>{
     console.log(body.password);
-    const res = await fetch("http://localhost:3000/users/login", {
+    const res = await fetch("https://api-baries.cyclic.app/users/login", {
         method: "POST",
         headers:{
             'content-type': 'application/json',

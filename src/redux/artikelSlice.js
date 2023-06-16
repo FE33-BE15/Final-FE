@@ -8,7 +8,7 @@ const initialState = {
 }
 export const getArtikel = createAsyncThunk('artikel/getArtikel',() =>{
     return axios
-    .get('http://localhost:3000/articles')
+    .get('https://api-baries.cyclic.app/articles')
     .then((Response) => Response.data)
 })
 export const artikelReducer = createSlice({
