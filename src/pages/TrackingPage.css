@@ -1,0 +1,176 @@
+@media screen and (min-width:400px) {
+    .ContainerTrack{
+        margin: 30px 100px 50px;
+    }
+    .ContainerTrack hr{
+        border-top: 1px dashed black;
+    }
+    .ContainerNutrisi{
+        display: flex;
+        margin: 0 0 15px;
+    }
+    .Calori{
+        display: flex;
+        height: 250px;
+        width: 100%;
+        max-width: 800 px;
+        border-radius: 5px;
+        border: 1px solid;
+        margin: 0 0 0;
+        margin-right: 8px;
+        padding: 10px;
+    }
+    .Calori div{
+        margin: auto;
+    }
+    .Calori h2{
+        margin: 0 0;
+        font-size: 40px;
+    }
+    .Calori p{
+        margin: 0 0;
+        font-size: 40px;
+        text-align: center;
+    }
+    .Nutrisi{
+        text-align: center;
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 5px;
+        border: 1px solid;
+        margin: 0 auto;
+        padding: 2px 5px;
+    }
+    .Nutrisi h2{
+        font-size: 18px;
+        margin: 0 0;
+    }
+    .Nutrisi p{
+        font-size: 15px;
+        margin: 0 0;
+    }
+    .FoodToday{
+        margin: 0 0 30px;
+    }
+
+    .FoodToday span{
+        border: 1px solid #568D33;
+        border-radius: 5px;
+        padding: 5px;
+        background-color: #568D33;
+    }
+    .FoodToday span a{
+        color: white;
+    }
+    .TabelFoodToday{
+        margin: 0 auto 10px;
+        max-width: 1350 px;
+        width: 100%;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .TabelFoodToday .TrackFoodName{
+        text-align: start;
+    }
+    .TabelFoodToday .TrackFoodCalori,.TrackFoodCarb,.TrackFoodProtein,.TrackFoodFat,.TrackFoodCarbon{
+        width: 100px;
+    }
+    .TabelFoodToday .TrackCalTd,.TrackCarbTd,.TrackProteinTd,.TrackFatTd,.TrackCarbonTd{
+        text-align: center;
+    }
+    .TabelFoodToday .TrackActionTd{
+        width: 24px;
+    }
+    .TabelFoodToday .TrackActionTd img{
+        width: 24px;
+        vertical-align:middle;
+    }
+}
+@media screen and (max-width:400px) {
+    .ContainerTrack{
+        margin: auto;
+    }
+    .ContainerTrack hr{
+        border-top: 1px dashed black;
+    }
+    .Calori{
+        width: 340px;
+        border-radius: 5px;
+        border: 1px solid;
+        margin: 30px auto 15px;
+        padding: 5px;
+    }
+    .Calori h2{
+        margin: 0 0;
+        font-size: 20px;
+    }
+    .Nutrisi{
+        width: 330px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+        border: 1px solid;
+        margin: 0 auto;
+        padding: 2px 5px;
+    }
+    .Nutrisi h2{
+        font-size: 15px;
+        margin: 0 0;
+    }
+    .Nutrisi p{
+        font-size: 14px;
+        margin: 0 0;
+    }
+    .FoodToday{
+        margin: 0 0 30px;
+    }
+    .FoodToday p{
+        margin-left: 2%;
+    }
+    .FoodToday span{
+        border: 1px solid #568D33;
+        border-radius: 5px;
+        padding: 5px;
+        background-color: #568D33;
+    }
+    .FoodToday span a{
+        color: white;
+    }
+    .tabel{
+        margin: 0 auto;
+        max-width: 340px;
+    }
+    .TabelFoodToday{
+        margin: 0 0 10px;
+        width: 340px;
+        border: 1px solid;
+        border-radius: 5px;
+    }
+    
+    .TabelFoodToday .TrackFoodName{
+        text-align: start;
+    }
+    .TabelFoodToday .TrackFoodCarb,.TrackFoodProtein,.TrackFoodFat,.TrackFoodCarbon{
+        display: none;
+    }
+    .TabelFoodToday .TrackCarbTd,.TrackProteinTd,.TrackFatTd,.TrackCarbonTd{
+        display: none;
+    }
+    .TabelFoodToday .TrackFoodCalori{
+        width: 100px;
+    }
+    .TabelFoodToday .TrackCalTd{
+        text-align: center;
+    }
+    .TabelFoodToday .TrackActionTd{
+        width: 24px;
+    }
+    .TabelFoodToday .TrackActionTd img{
+        width: 24px;
+        vertical-align:middle;
+    }
+}

@@ -1,0 +1,75 @@
+@media screen and (min-width:400px) {
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #D7FFE3;
+        padding: 0 40px;
+        box-shadow: 2px 2px 5px 1px gray;
+
+    }
+    .navbar ul{
+        display: flex;
+        list-style-type: none;
+        padding: 0 4px;
+    }
+    .navbar ul li {
+        margin: 5px 20px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .navbar ul span {
+        margin-left: 8px;
+        background-color: white ;
+        color: #048853 ;
+        padding: 5px 8px;
+        border: 0 solid ;
+        border-radius: 5px;
+        font-size: large;
+        font-weight: bold;
+        box-shadow: 0px 1px 3px gray;
+        cursor: pointer;
+    }
+    .LogoApp{
+        padding: 10px 0;
+        width: 100px;
+        height: 50px;
+    }
+}
+@media screen and (max-width:400px) {
+    nav{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        background-color: #D7FFE3;
+        padding: 0 0;
+        box-shadow: 2px 2px 5px 1px gray;
+    }
+    .navbar ul{
+        display: flex;
+        list-style-type: none;
+        padding: 0 4px;
+    }
+    .navbar ul li {
+        margin: 5px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    .navbar ul span {
+        margin-left: 8px;
+        background-color: white ;
+        color: #048853 ;
+        padding: 5px 8px;
+        border: 0 solid ;
+        border-radius: 5px;
+        font-size: large;
+        font-weight: bold;
+        box-shadow: 0px 1px 3px gray;
+        cursor: pointer;
+    }
+    .LogoApp{
+        padding: 10px 0;
+        width: 70px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,131 @@
+@media screen and (min-width:400px) {
+    .ContainerFoodData{
+        margin: 60px 100px 100px;
+    }
+    .ContainerFoodData h2{
+        margin: 0 0;
+    }
+    .BackIcon{
+        width: 50px;
+    }
+    .FoodSearch input{
+        width: 100%;
+        max-width: 900px;
+        height: 32px;
+        border: 1px solid;
+        border-radius: 5px;
+        margin: 0 10px 10px 0;
+        padding-left: 10px;
+    }
+    .FoodSearch button{
+        border: 1px solid #568D33;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #568D33;
+        color: white;
+        font-size: 15px;
+    }
+    .btn-add{
+        cursor: pointer;
+    }
+    
+    .ContainerFood table{
+        border: 1px solid;
+        max-width: 1350px;
+        width: 100% ;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .ContainerFood .FoodName{
+        text-align: start;
+    }
+    .ContainerFood .FoodCarb, .FoodProtein, .FoodFat, .FoodCarbon, .FoodCalori{
+        width: 100px;
+    }
+    .ContainerFood .CarbTd, .ProteinTd, .FatTd, .CarbonTd, .CalTd{
+        text-align: center;
+    }
+    .ContainerFood .AddTd{
+        width: 80px;
+    }
+    .ContainerFood .AddTd .btn-add{
+        width: 80px;
+        height: 30px;
+        border: 1px solid #568D33;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #568D33;
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:400px) {
+    .btn-add{
+        cursor: pointer;
+    }
+    .ContainerFoodData{
+        margin: 20px 0 30px;
+    }
+    .ContainerFoodData h2{
+        margin: 0 0;
+        font-size: 20px;
+    }
+    .BackIcon{
+        width: 30px;
+    }
+    .FoodSearch input{
+        width: 100%;
+        max-width: 220px;
+        height: 32px;
+        border: 1px solid;
+        border-radius: 5px;
+        margin: 0 10px 10px 0;
+        padding-left: 10px;
+    }
+    .FoodSearch button{
+        border: 1px solid #568D33;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #568D33;
+        color: white;
+        font-size: 15px;
+    }
+    .ContainerFood table{
+        margin: 0 auto;
+        border: 1px solid;
+        max-width: 380px;
+        width: 100% ;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .ContainerFood .FoodName{
+        text-align: start;
+    }
+    .ContainerFood .FoodCarb, .FoodProtein, .FoodFat, .FoodCarbon, .FoodCalori{
+        width: 100px;
+    }
+    .ContainerFood .FoodCarb, .FoodProtein, .FoodFat, .FoodCarbon{
+        display: none;
+    }
+    .ContainerFood .CarbTd, .ProteinTd, .FatTd, .CarbonTd, .CalTd{
+        text-align: center;
+    }
+    .ContainerFood .CarbTd, .ProteinTd, .FatTd, .CarbonTd{
+        display: none;
+    }
+    .ContainerFood .AddTd{
+        width: 80px;
+    }
+    .ContainerFood .AddTd .btn-add{
+        width: 80px;
+        height: 30px;
+        border: 1px solid #568D33;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #568D33;
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
