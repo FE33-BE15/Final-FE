@@ -43,10 +43,14 @@ function TrackingPage (){
             <div className="ContainerTrack">
                 <div className="ContainerNutrisi">
                     <div className="Calori">
-                        <h2>Kalori Dibutuhkan</h2>
-                        <p>{usercalori} kkal</p>
-                        <h2>Kalori Terpenuhi</h2>
-                        <p>{TotCal} kkal</p>
+                        <div>
+                            <h2>Kalori Dibutuhkan</h2>
+                            <p>{usercalori} kkal</p>
+                        </div>
+                        <div>
+                            <h2>Kalori Terpenuhi</h2>
+                            <p>{TotCal} kkal</p>
+                        </div>
                     </div>
                     <div className="Nutrisi">
                         <div>
