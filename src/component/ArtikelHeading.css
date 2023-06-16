@@ -1,7 +1,7 @@
 @media screen and (min-width:400px) {
     .Heading{
         height: 400px;
-        max-width: 1100px;
+        max-width: 2100px;
         border: 1px solid;
         border-radius: 5px;
         margin: 0 auto 30px;
@@ -15,7 +15,8 @@
     }
     .HeadingTitle{
         height: 150px;
-        max-width: 1100px;
+        width: 99.6%;
+        max-width: 2100px;
         position: absolute;
         bottom: 0;
         left: 0;

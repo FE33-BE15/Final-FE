@@ -5,15 +5,16 @@ import Navbar from '../component/Navbar'
 import Footer from '../component/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getArtikelAsync } from '../redux/artikelSlice'
+import { getArtikel } from '../redux/artikelSlice'
+
 
 function ArtikelPage() {
     const dispatch = useDispatch();
     const artikel = useSelector((state) => state.artikel)
     useEffect(() => {
-        dispatch(getArtikelAsync());
-    },[dispatch]);
-    console.log(artikel) 
+        dispatch(getArtikel());
+    },[]);
+    console.log(artikel)
     return(
         <>
         <Navbar/>
@@ -23,10 +24,10 @@ function ArtikelPage() {
             </div>
             <hr />
             <div className='ArtikelCard'>
-                <ArtikelCard/>
-                <ArtikelCard/>
-                <ArtikelCard/>
-                <ArtikelCard/>
+                {artikel.artikel.map((artikel) => (
+                    <ArtikelCard id={artikel.id} title={artikel.title}/>
+                ))}
+                
             </div>
         </div>
         <Footer/>

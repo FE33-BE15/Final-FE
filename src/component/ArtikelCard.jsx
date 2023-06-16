@@ -2,13 +2,16 @@ import "./ArtikelCard.css"
 import reactLogo from '../assets/react.svg'
 import { Link } from "react-router-dom"
 
-function ArtikelCard() {
+function ArtikelCard({id, title}) {
     return(
         <>
-            <div className="card">
+            <div className="card" key={id}>
                 <img src={reactLogo} alt="foto" />
-                <p className="title">Pola Hidup Sehat Dengan Menerapkan Pedoman Gizi Seimbang.</p>
-                <Link to='/Artikel/detail'>selengkapnya</Link> 
+                <p className="title">{title}</p>
+                <Link to='/Artikel/detail' state={{
+                    id : id,
+                    title : title
+                }} className="link">selengkapnya</Link> 
             </div>
         </>
     )

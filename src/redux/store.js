@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { artikelReducer } from "./artikelSlice";
+import artikelReducer  from "./artikelSlice";
+import  foodReducer  from "./foodSlice";
 
-export default configureStore({
+const store =  configureStore({
     reducer: {
-        artikel : artikelReducer
+        artikel : artikelReducer,
+        food : foodReducer,
     }
 })
+export default store
