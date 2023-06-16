@@ -69,7 +69,7 @@ const authSlice = createSlice({
             }
 
         },
-        [signUpUser.rejected]: (state)=>{
+        [signInUser.rejected]: (state)=>{
             state.loading = true
         },
         //Register
