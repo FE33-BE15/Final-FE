@@ -9,12 +9,12 @@ const initialState = {
 const token = localStorage.getItem("token")
 export const getFood = createAsyncThunk('food/getFood',() => {
     return axios
-    .get(`http://localhost:3000/foods`)
+    .get(`https://api-baries.cyclic.app/foods`)
     .then((response) => response.data)
 } )
 export const postFood = createAsyncThunk('food/postFood',(payload) => {
     return axios
-    .post(`http://localhost:3000/trackings/${payload} `,{},{headers :{token : token }})
+    .post(`https://api-baries.cyclic.app/trackings/${payload} `,{},{headers :{token : token }})
     .then((response) => console.log(response))
 } )
 
