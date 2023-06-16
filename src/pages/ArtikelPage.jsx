@@ -14,18 +14,21 @@ function ArtikelPage() {
     useEffect(() => {
         dispatch(getArtikel());
     },[]);
-    console.log(artikel)
+    console.log()
     return(
         <>
         <Navbar/>
         <div className='ContainerArtikel'>
             <div className='ArtikelHeading'>
-                <ArtikelHeading/>
+                <ArtikelHeading 
+                title ={artikel.artikel.allArticle?.[0].judul}
+                img ={artikel.artikel.allArticle?.[0].image}
+                tanggal ={artikel.artikel.allArticle?.[0].tanggal}/>
             </div>
             <hr />
             <div className='ArtikelCard'>
-                {artikel.artikel.map((artikel) => (
-                    <ArtikelCard id={artikel.id} title={artikel.title}/>
+                {artikel.artikel.allArticle?.map((artikel) => (
+                    <ArtikelCard id={artikel.id} title={artikel.judul} tanggal={artikel.tanggal} konten={artikel.konten} image={artikel.image}/>
                 ))}
                 
             </div>

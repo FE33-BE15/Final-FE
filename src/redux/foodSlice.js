@@ -6,10 +6,16 @@ const initialState = {
     food : [],
     error : '',
 }
+const token = localStorage.getItem("token")
 export const getFood = createAsyncThunk('food/getFood',() => {
     return axios
     .get(`http://localhost:3000/foods`)
     .then((response) => response.data)
+} )
+export const postFood = createAsyncThunk('food/postFood',(payload) => {
+    return axios
+    .post(`http://localhost:3000/trackings/${payload} `,{},{headers :{token : token }})
+    .then((response) => console.log(response))
 } )
 
 export const foodReducer = createSlice({
@@ -25,6 +31,18 @@ export const foodReducer = createSlice({
             state.error = ''
         })
         builder.addCase(getFood.rejected, (state,action) => {
+            state.loading = true
+            state.food = []
+            state.error = action.error.message
+        })
+        builder.addCase(postFood.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(postFood.fulfilled, (state) => {
+            state.loading = false
+            state.error = ''
+        })
+        builder.addCase(postFood.rejected, (state,action) => {
             state.loading = true
             state.food = []
             state.error = action.error.message

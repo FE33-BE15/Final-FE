@@ -2,10 +2,10 @@ import Footer from "../component/Footer"
 import Navbar from "../component/Navbar"
 import BackIcon from "../assets/arrow-back-outline.svg"
 import './FoodDataPage.css'
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { useEffect } from "react"
-import { getFood } from "../redux/foodSlice"
+import { useEffect, useState } from "react"
+import { getFood, postFood } from "../redux/foodSlice"
 
 function FoodDataPage (){
     const dispatch = useDispatch();
@@ -13,7 +13,28 @@ function FoodDataPage (){
     useEffect(() => {
         dispatch(getFood());
     },[])
-    console.log(food)
+    const [input,setinput] = useState('')
+    const inputhandler = (e) => {
+        const lowercase = e.target.value.toLowerCase();
+        setinput(lowercase)
+    }
+    const filterData = food.food.allFood?.filter((el)=>{
+        if (input === ''){
+            return el
+        } else { 
+            return el.nama?.toLowerCase().includes(input)
+        }
+    })
+    const klikadd = () => {
+        console.log(id)
+        dispatch(postFood(id))
+    }
+    // console.log(filterData)
+/* let sum = food.food.allFood?.reduce(function(prev, current) {
+    return prev + +current.karbon
+  }, 0);
+console.log(sum) */
+
     return(
         <>
         <Navbar/>
@@ -21,7 +42,7 @@ function FoodDataPage (){
                 <Link to='/Tracking'><img src={BackIcon} alt="back" className="BackIcon" /></Link>
                 <h2>Tambahkan Makanan</h2>
                 <div className="FoodSearch">
-                    <input type="text" placeholder="Search Food" />
+                    <input type="text" placeholder="Search Food" onChange={inputhandler} />
                     <button>Search</button>
                 </div>
                 <div className="ContainerFood">
@@ -37,15 +58,16 @@ function FoodDataPage (){
                             </tr>
                         </thead>
                         <tbody>
-                        {food.food.map((food) => (
+                            
+                        {filterData?.map((food) => (
                             <tr key={food.id}>
-                                <td className="NameTd">{food.name}</td>
-                                <td className="CarbTd">{food.Karbohidrat} kkal</td>
-                                <td className="ProteinTd">{food.Protein} kkal</td>
-                                <td className="FatTd">{food.Lemak} kkal</td>
-                                <td className="CarbonTd">{food.Karbon} kkal</td>
-                                <td className="CalTd">{food.Kalori} kkal</td>
-                                <td className="AddTd"><button>Add</button></td>
+                                <td className="NameTd">{food.nama}</td>
+                                <td className="CarbTd">{food.karbohidrat} g</td>
+                                <td className="ProteinTd">{food.protein} g</td>
+                                <td className="FatTd">{food.lemak} g</td>
+                                <td className="CarbonTd">{food.karbon} g</td>
+                                <td className="CalTd">{food.kalori} kkal</td>
+                                <td className="AddTd"><input type="button" className="btn-add" value="Add" onClick={()=>{dispatch(postFood(food.id))}}/></td>
                             </tr>
                         ))}
                         </tbody>
@@ -55,5 +77,6 @@ function FoodDataPage (){
         <Footer/>
         </>
     )
+
 }
 export default FoodDataPage

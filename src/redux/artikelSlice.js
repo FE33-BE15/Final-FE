@@ -8,7 +8,7 @@ const initialState = {
 }
 export const getArtikel = createAsyncThunk('artikel/getArtikel',() =>{
     return axios
-    .get('https://64550599a74f994b334fc3e6.mockapi.io/article')
+    .get('http://localhost:3000/articles')
     .then((Response) => Response.data)
 })
 export const artikelReducer = createSlice({
