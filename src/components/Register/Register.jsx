@@ -48,7 +48,7 @@ function Register() {
         setActivity(e.target.value)
     };
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const klikDaftar = () => {
         console.log(
             name,
@@ -61,7 +61,7 @@ function Register() {
             gender
         );
         dispatch(signUpUser({name, email, age, weight, height, activity, pass, gender}));
-    };
+    }
 
     return (
         <div className="container-2">
@@ -149,9 +149,9 @@ function Register() {
 
                     </div>
                     <div className="gender-details" onChange={inputgender}>
-                        <input type='radio' name='gender' id='dot-1' value="1"></input>
-                        <input type='radio' name='gender' id='dot-2' value="2"></input>
-                        <input type='radio' name='gender' id='dot-3' value="3"></input>
+                        <input type='radio' name='gender' id='dot-1' value="Laki-laki"></input>
+                        <input type='radio' name='gender' id='dot-2' value="Perempuan"></input>
+                        <input type='radio' name='gender' id='dot-3' value="Lainnya"></input>
                         <span className="gender-title">Jenis Kelamin</span>
                         <div className="category">
                             <label htmlFor='dot-1'>
