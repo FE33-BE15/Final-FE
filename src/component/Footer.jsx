@@ -1,4 +1,4 @@
-import './footer.css'
+import './Footer.css'
 import Logo from '../assets/logo.png'
 import danone from '../assets/DANONE_LOGO.png'
 import skillvul from '../assets/skillvul.png'
